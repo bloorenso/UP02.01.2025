@@ -1,0 +1,69 @@
+﻿<Window x:Class="UP02._01._2025.EditOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UP02._01._2025"
+        mc:Ignorable="d"
+        Title="EditOrder" Height="450" Width="800">
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="1"  Margin="20,0,50,0" VerticalAlignment="Center" Text="Номер заказа" FontSize="15" />
+        <TextBlock Grid.Row="2" Margin="20,0,50,0" VerticalAlignment="Center" Text="Дата заказа" FontSize="15" />
+        <TextBlock Grid.Row="4" Grid.Column="2" Margin="20,0,50,0" VerticalAlignment="Center" Text="Номер товара" FontSize="15" />
+        <TextBlock Grid.Row="4" Margin="20,0,50,0" VerticalAlignment="Center" Text="Количество товара" FontSize="15" />
+        <TextBlock Grid.Row="5" Margin="20,0,50,0" VerticalAlignment="Center" Grid.ColumnSpan="2" Text="Наименование товара" FontSize="15" />
+        <ComboBox x:Name="NameProduct" SelectionChanged="NameProduct_SelectionChanged"  Margin="10,0,20,0"  Height="30" BorderBrush="Black" BorderThickness="1" Grid.Row="5" Grid.Column="1" FontSize="15"/>
+
+        <TextBlock Grid.Row="6" Grid.Column="2" Margin="20,0,50,0" VerticalAlignment="Center" Grid.ColumnSpan="2" Text="Наименование магазина" FontSize="15" />
+        <ComboBox x:Name="NameStore" SelectionChanged="NameStore_SelectionChanged" Margin="10,0,20,0"  Height="30" BorderBrush="Black" BorderThickness="1" Grid.Row="6" Grid.Column="3" FontSize="15"/>
+
+
+        <TextBlock Grid.Row="6" Grid.Column="0" Margin="20,0,50,0" VerticalAlignment="Center" Grid.ColumnSpan="2" Text="Способ оплаты" FontSize="15" />
+        <ComboBox x:Name="MethodPay" SelectionChanged="MethodPay_SelectionChanged" Margin="10,0,20,0"  Height="30" BorderBrush="Black" BorderThickness="1" Grid.Row="6" Grid.Column="1" FontSize="15"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="20,0,50,0" VerticalAlignment="Center" Grid.ColumnSpan="2" Text="Дисконтная карта" FontSize="15" />
+        <ComboBox x:Name="DiscountCard" SelectionChanged="DiscountCard_SelectionChanged" Margin="10,0,20,0"  Height="30" BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="1" FontSize="15"/>
+
+        <TextBlock Grid.Row="7" Grid.Column="0" Margin="20,0,50,0" VerticalAlignment="Center" Grid.ColumnSpan="2" Text="Сумма скидки" FontSize="15" />
+        <TextBox x:Name="DiscountRate" Margin="10,0,20,0"  Height="30" BorderBrush="Black" BorderThickness="1" Grid.Row="7" Grid.Column="1" FontSize="15"/>
+
+        <TextBlock Grid.Row="7" Grid.Column="2" Margin="20,0,50,0" VerticalAlignment="Center" Grid.ColumnSpan="2" Text="Общая сумма" FontSize="15" />
+        <TextBox x:Name="Total" Margin="10,0,20,0"  Height="30" BorderBrush="Black" BorderThickness="1" Grid.Row="7" Grid.Column="3" FontSize="15"/>
+
+        <TextBlock Grid.Row="1"  Margin="20,0,50,0" VerticalAlignment="Center" Grid.Column="2" Text="Номер магазина" FontSize="15" />
+        <TextBlock Grid.Row="2" Margin="20,0,50,0" VerticalAlignment="Center" Grid.Column="2" Text="Номер карты" FontSize="15" />
+        <TextBlock Grid.Row="3" Margin="20,0,50,0" VerticalAlignment="Center" Grid.Column="2" Text="Номер метода оплаты" Grid.ColumnSpan="2" FontSize="15" />
+
+        <TextBlock Text="Редактировать заказ" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontSize="15" />
+        <TextBlock x:Name="IdOrder" Margin="10,0,20,0" Height="30" Grid.Row="1"  Grid.Column="1" FontSize="15" />
+        <TextBox x:Name="OrderDate"  Margin="10,0,20,0" Height="30"   BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="1" FontSize="15" />
+        <TextBlock x:Name="IdProduct"  Margin="10,0,20,0" Height="30" Grid.Row="4" Grid.Column="3" FontSize="15"/>
+        <TextBox x:Name="Quantity"  Margin="10,0,20,0"  Height="30" BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.Column="1" FontSize="15"/>
+
+        <TextBlock x:Name="IdStore"  Margin="10,0,20,0" Height="30" Grid.Row="1" Grid.Column="3" FontSize="15" />
+        <TextBlock x:Name="IdCard"  Margin="10,0,20,0" Height="30" Grid.Row="2" Grid.Column="3" FontSize="15"/>
+        <TextBlock x:Name="IdMethod"  Margin="10,0,20,0"  Height="30" Grid.Row="3" Grid.Column="3" FontSize="15"/>
+        
+        <Button x:Name="Save" Click="Save_Click" Grid.Row="8" Margin="80,0,0,0" Height="30" Content="Подтвердить"/>
+        <Button x:Name="Back" Click="Back_Click" Grid.Row="8" Margin="0,0,80,0" Grid.Column="1" Height="30" Content="Отменить"/>
+    </Grid>
+</Window>

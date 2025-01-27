@@ -1,0 +1,46 @@
+﻿<Window x:Class="UP02._01._2025.SellerGoods"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UP02._01._2025"
+        mc:Ignorable="d"
+        Title="SellerGoods" Height="450" Width="800">
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="Goods" Click="Goods_Click" Content="Каталог товаров" HorizontalAlignment="Right" Height="40" Width="160" Grid.Row="0" Grid.Column="0"/>
+        <Button x:Name="Orders" Click="Orders_Click"  Content="Создание заказа" Background="White" Height="40" Width="180" Grid.Row="0" Grid.Column="1"/>
+        <Button x:Name="Cards" Click="Cards_Click" Content="Дисконтные карты" Background="White" Height="40" Width="180" Grid.Row="0" Grid.Column="2"/>
+        <Button x:Name="Exit" Click="Exit_Click" Content="Выйти" Width="120" FontSize="15" Height="40" Background="Red" Foreground="White" Grid.Row="0" Grid.Column="3" Margin="10" HorizontalAlignment="Right"/>
+        <Border Grid.Row="1" Grid.ColumnSpan="4" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="1">
+            <TextBlock FontSize="15" VerticalAlignment="Center" Margin="30,0,0,0" Text="Каталог товаров"/>
+        </Border>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" Grid.ColumnSpan="4">
+            <TextBlock Width="100" TextAlignment="Center" Margin="10,0,0,0" Text="Найти товар"/>
+            <TextBox Width="100" Margin="20,0,0,0" Text="Поиск"/>
+            <TextBlock Margin="50,0,0,0" Text="Фильтры"/>
+            <ComboBox Margin="20,0,0,0" Width="100" Text="Автор"/>
+            <ComboBox Margin="20,0,0,0" Width="100" Text="Жанр"/>
+        </StackPanel>
+        <StackPanel Margin="10" Orientation="Horizontal" Grid.Row="7" Grid.ColumnSpan="4">
+            <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Text="Добавить выбранный товар в заказ:" FontSize="15"/>
+            <Button x:Name="Add" Click="Add_Click" FontSize="15" VerticalAlignment="Center" Height="30" Width="150" Content="Добавить" Margin="15,0,0,0" Background="DodgerBlue" Foreground="AntiqueWhite"/>
+        </StackPanel>
+        <Button x:Name="Create" Click="Create_Click" Grid.Row="7" FontSize="15" Content="Перейти к созданию заказа" Grid.Column="4" Height="30" Width="240" Background="DodgerBlue" Foreground="AntiqueWhite"/>
+        <DataGrid Grid.Row="3" Height="150" VerticalAlignment="Top" Grid.RowSpan="3" Margin="10" Grid.ColumnSpan="4"/>
+    </Grid>
+</Window>

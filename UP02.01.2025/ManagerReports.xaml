@@ -1,0 +1,78 @@
+﻿<Window x:Class="UP02._01._2025.ManagerReports"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UP02._01._2025"
+        mc:Ignorable="d"
+        Title="ManagerReports" Height="450" Width="800">
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="Black" Grid.ColumnSpan="4" BorderThickness="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Margin="0,0,100,0" Orientation="Horizontal" Grid.Row="0">
+                    <Button x:Name="Suppliers" Click="Suppliers_Click" Content="Поставщики" Background="White" Height="40" Width="160" Grid.Row="0" Grid.Column="0"/>
+                    <Button x:Name="Sells" Click="Sells_Click" Content="Продажи" Background="White" Height="40" Width="180" Grid.Row="0"/>
+                    <Button x:Name="Reports" Click="Reports_Click" Content="Отчеты" Height="40" Width="180" Grid.Row="0"/>
+                </StackPanel>
+                <Button x:Name="Exit" Click="Exit_Click" Content="Выйти" Margin="30,0,0,0" Width="120" FontSize="15" Height="40" HorizontalAlignment="Right" Background="Red" Foreground="White"/>
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="1"  Grid.ColumnSpan="5">
+            <TextBlock FontSize="15" Margin="60,0,0,0" Text="Просмотр отчетов"/>
+        
+            <StackPanel Grid.ColumnSpan="4" HorizontalAlignment="Center" Orientation="Horizontal">
+                <ComboBox x:Name="Store" Height="25" Text="Магазин" SelectionChanged="Store_SelectionChanged" Width="80"/>
+                <Button Click="SelectDates_Click" Content="Период" Height="25" Width="80"/>
+               
+                <TextBlock Text="Общая сумма доходов:" Width="130" Height="20" Margin="330,0,0,0"/>
+                <TextBox Text="0 руб." Width="150" Height="25" />
+            </StackPanel>
+        </StackPanel>
+        <TextBlock x:Name="SelectedDatesText" VerticalAlignment="Bottom" Margin="0,10,200,304" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Grid.Row="1"/>
+        <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Grid.Column="2" Grid.ColumnSpan="2">
+            <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal">
+          
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Grid.ColumnSpan="4">
+            <Border BorderBrush="Black" BorderThickness="1">
+                <StackPanel>
+                <TextBlock x:Name="TxtView" Margin="40,20,0,0" Text="Товары популярные книги" />
+                <DataGrid x:Name="dataGrid" IsReadOnly="True" Height="100" Width="550" Margin="20,10,20,0"/>
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1">
+                <StackPanel>
+
+                    <TextBlock Text="Загрузка отчетов" HorizontalAlignment="Center" Margin="20"/>
+                    <TextBlock Text="Выбор отчета: " HorizontalAlignment="Left" Width="100" Margin="20,0,0,0"/>
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,20">
+                    <StackPanel Margin="0,6,0,0">
+                        <TextBlock FontSize="10" Margin="10,6,0,0" Text="Отчет о доходах"/>
+                        <TextBlock FontSize="10" Margin="10,10,0,0" Text="Отчет о популярных товарах"/>
+                        <TextBlock FontSize="10" Margin="10,10,0,0" Text="Отчет о товарах с низким остатком"/>
+                    </StackPanel>
+                    <StackPanel Width="10" Margin="30,20,0,0">
+                        <RadioButton x:Name="All" IsChecked="True" Click="All_Click" Checked="All_Checked" Margin="-20,-10,10,0" />
+                        <RadioButton x:Name="Pop" IsChecked="False" Click="Pop_Click" Checked="Pop_Checked" Margin="-20,10,10,0"/>
+                        <RadioButton x:Name="Minus" Click="Minus_Click" IsChecked="False" Checked="Minus_Checked" Margin="-20,10,10,0" />
+                    </StackPanel>
+                </StackPanel>
+            <Button x:Name="Save" Click="Save_Click" Content="Загрузить отчет" Margin="0,90,0,0" Height="30" Width="150" Background="DodgerBlue" Foreground="AntiqueWhite"/>
+            </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

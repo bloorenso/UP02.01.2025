@@ -1,0 +1,58 @@
+﻿<Window x:Class="UP02._01._2025.SellerOrders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UP02._01._2025"
+        mc:Ignorable="d"
+        Title="SellerOrders" Height="450" Width="800">
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="Goods" Click="Goods_Click"  Content="Каталог товаров" Background="White" HorizontalAlignment="Right" Height="40" Width="160" Grid.Row="0" Grid.Column="0"/>
+        <Button x:Name="Orders" Click="Orders_Click" Content="Создание заказа" Height="40" Width="180" Grid.Row="0" Grid.Column="1"/>
+        <Button x:Name="Cards" Click="Cards_Click" Content="Дисконтные карты" Background="White" Height="40" Width="180" Grid.Row="0" Grid.Column="2"/>
+        <Button x:Name="Exit" Click="Exit_Click" Content="Выйти" Width="120" FontSize="15" Height="40" Background="Red" Foreground="White" Grid.Row="0" Grid.Column="3" Margin="10" HorizontalAlignment="Right"/>
+        <Border Grid.Row="1" Grid.ColumnSpan="4" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="1">
+            <TextBlock FontSize="15" VerticalAlignment="Center" Margin="30,0,0,0" Text="Создание заказа"/>
+        </Border>
+        <StackPanel Margin="10" Orientation="Vertical" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="3">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Text="Дисконтная карта:" FontSize="15"/>
+                <TextBox Height="25" Width="140" Margin="5,0,0,0"/>
+                <Button x:Name="Search" Click="Search_Click" Margin="10,0,0,0" Width="120" Height="25" Content="Найти карту"  Background="DodgerBlue" Foreground="AntiqueWhite"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="120" Margin="10" FontSize="15" Text="Номер телефона:"/>
+                <ComboBox Height="25" Width="140"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="4">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Margin="0,0,0,5" Text="Сумма заказа БУС:" />
+                <TextBlock Margin="0,0,0,5" Text="Скидка:"/>
+                <TextBlock Text="Итоговая стоимость:"/>
+            </StackPanel>
+            <StackPanel Margin="15,0,0,0" Width="120">
+                <TextBox Margin="0,0,0,7" Height="15"/>
+                <TextBox Margin="0,0,0,7" Height="15"/>
+                <TextBox Height="15"/>
+            </StackPanel>
+        </StackPanel>
+        <Button x:Name="Save" Click="Save_Click" Grid.Row="7" FontSize="15" Content="Оформить заказ" Grid.Column="4" Height="25" Width="240" Background="DodgerBlue" Foreground="AntiqueWhite"/>
+        <DataGrid Grid.Row="2" Height="150" VerticalAlignment="Top" Grid.RowSpan="3" Margin="10" Grid.ColumnSpan="4"/>
+    </Grid>
+</Window>
